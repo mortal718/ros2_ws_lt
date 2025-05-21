@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="hesai_xt32" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="hesai_xt32" params="parent *origin prefix:='' name:=hesai_xt32
+                                        topic_name:=/hesai/pandar
+                                        simulation:=false lidar_frame:=pandar use_gpu:=true">
+    <joint name="${parent}_to_${prefix}hesai" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}" />
+      <child link="${prefix}hesai_base" />
+    </joint>
+
+    <link name="${prefix}hesai_base">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="file://$(find hesai_description)/meshes/visual/xt32.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <!-- Taken from CAD assuming constant density and mass 0.807 -->
+        <origin xyz="-0.015e-3 0.0 37.494e-3" rpy="0 0 0" />
+        <!-- Taken from datasheet -->
+        <mass value="0.807" />
+        <!-- Taken from CAD assuming constant density and mass 0.807 -->
+        <inertia ixx="886.81e-6" ixy="5.802e-11" ixz="-0.34e-6" iyy="898.12e-6" iyz="-0.014e-6" izz="1004.287e-6" />
+      </inertial>
+      <collision>
+        <origin xyz="0 0 38.0e-3"/>
+        <geometry>
+          <cylinder radius="51.500e-3" length="76.0e-3" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="${lidar_frame}"/>
+    <joint name="${prefix}hesai_base_to_${lidar_frame}" type="fixed">
+      <!-- See XT32 user manual -->
+      <origin xyz="0.0 0.0 46.4e-3" rpy="0.0 0.0 ${pi/2}"/>
+      <parent link="${prefix}hesai_base"/>
+      <child link="${lidar_frame}" />
+    </joint>
+
+    <xacro:if value="${simulation}">
+      <xacro:include filename="$(find hesai_description)/urdf/gazebo.urdf.xacro"/>
+      <xacro:hesai_gazebo prefix="${prefix}" lidar_frame="${lidar_frame}" topic_name="${topic_name}" min_range="0.4" max_range="80.0" 
+        min_horizontal_angle="-180.0" max_horizontal_angle="180.0" min_vertical_angle="-16.0" max_vertical_angle="15.0"
+        hz="10" samples="2000" lasers="32" collision_range="0.3" noise="0.008" use_gpu="${use_gpu}"
+      />
+    </xacro:if>
+  </xacro:macro>
+
+</robot>

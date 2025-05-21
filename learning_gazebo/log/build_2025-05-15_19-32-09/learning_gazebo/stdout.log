@@ -1,0 +1,116 @@
+running develop
+running egg_info
+creating learning_gazebo.egg-info
+writing learning_gazebo.egg-info/PKG-INFO
+writing dependency_links to learning_gazebo.egg-info/dependency_links.txt
+writing entry points to learning_gazebo.egg-info/entry_points.txt
+writing requirements to learning_gazebo.egg-info/requires.txt
+writing top-level names to learning_gazebo.egg-info/top_level.txt
+writing manifest file 'learning_gazebo.egg-info/SOURCES.txt'
+reading manifest file 'learning_gazebo.egg-info/SOURCES.txt'
+writing manifest file 'learning_gazebo.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/lib/python3.10/site-packages/learning-gazebo.egg-link (link to .)
+
+Installed /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo
+running symlink_data
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/ament_index
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/ament_index/resource_index
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/ament_index/resource_index/packages
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/resource/learning_gazebo -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/ament_index/resource_index/packages
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/package.xml -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/load_mbot_camera_into_gazebo.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/load_urdf_into_gazebo.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/mbot_camera.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/mbot_laser.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/mbot.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/load_mbot_rgbd_into_gazebo.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/load_mbot_laser_into_gazebo.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/launch/mbot_rgbd.launch.py -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/launch
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/human_bot_description1.urdf -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/mbot_with_laser_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/human_bot_description3.urdf -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/human_bot_description.urdf -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/mbot_with_camera_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/mbot_with_kinect_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/mbot_base_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/mbot_with_rgbd_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/human_bot_description4.urdf -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/mbot_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/two_wheeled_robot_nav2.urdf -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/human_bot_description2.urdf -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/meshes/base_link2.STL -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/meshes/kinect.dae -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/meshes/base_link3.STL -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/meshes/kinect.tga -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/meshes/kinect.jpg -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/meshes/base_link4.STL -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/meshes
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf/sensors
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/sensors/kinect_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf/sensors
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/sensors/rgbd_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf/sensors
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/sensors/camera_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf/sensors
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/sensors/lidar_gazebo.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf/sensors
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/urdf/sensors/lidar_gazebo1.xacro -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/urdf/sensors
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/empty_aerial_manipulation.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo2019_ralphthesis2020.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/agriculture.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/workshop_example.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_atrezzo.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/drone_race_track_2018_actual.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/walk1.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_arena_montreal2019.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_arena_montreal2019_onlylights.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo_4_panels.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_simple.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/walk.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo_panel.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/empty_world.model -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/city_osm_roundabout_combined.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo_orange_poles.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_assembly.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/test_zone.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/service.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/test_city.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/rubble.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_tests_lowlights.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/simple_env_3.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/azcar.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/office_small.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/office_earthquake.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo2019_orange_poles_panels.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/skidpan.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/neighborhood.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_tests.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/drone_race_track_2018_actual_with_gatepapers.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/hospital.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/yosemite.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/simple_env_2.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/small_city.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/house.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_simple_highlights.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/simple_env_1.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/canyonview_field.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/fetchit_challenge_arena_montreal2019_highlights.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/warehouse.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/hospital_two_floors.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo2019_orange_poles.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/hemicyl.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/wall_aerial_manipulation.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/office_env_large.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/outdoor.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/bookstore.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/waypoint.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/barrels.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/cyberzoo2019_orange_poles_panels_mats.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/office_cpr_construction.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/city_osm_roundabout.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/powerplant.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/inspection.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/worlds/office_cpr.world -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/worlds
+creating /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/rviz
+symbolically linking /home/hri01/ros_bot_lt/src/learning_gazebo/build/learning_gazebo/rviz/urdf_gazebo_config.rviz -> /home/hri01/ros_bot_lt/src/learning_gazebo/install/learning_gazebo/share/learning_gazebo/rviz

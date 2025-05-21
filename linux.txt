@@ -1,0 +1,5 @@
+ros2 pkg list | grep nav2_bringup
+colcon build --packages-select nav2_bringup nav2_map_server --symlink-install
+rm -rf build install log
+
+cp -r /home/hri01/ros_bot_lt/src/* /home/hri01/git_ros2_ws/ros2_ws_lt/

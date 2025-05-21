@@ -1,0 +1,104 @@
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import Float32
+import serial
+import struct
+
+class GimbalController(Node):
+    def __init__(self):
+        super().__init__('gimbal_controller')
+        
+        # 订阅目标角度
+        self.subscription = self.create_subscription(
+            Float32,
+            'gimbal_target_angle',
+            self.listener_callback,
+            10
+        )
+
+        # 初始化串口通信（假设使用 '/dev/ttyUSB0' 作为串口设备）
+        self.uart = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+        
+    def listener_callback(self, msg):
+        # 获取目标角度
+        target_angle = msg.data
+        
+        # 计算目标位置（根据协议的0-4095范围，假设角度范围为 -180° ~ 180°）
+        position = self.angle_to_position(target_angle)
+
+        # 设置目标位置并发送控制指令
+        self.set_position(1, position)  # 假设舵机ID为1
+
+    def angle_to_position(self, angle):
+        """
+        将角度转换为舵机的目标位置（0-4095范围）
+        假设角度范围是 -180° ~ 180°
+        """
+        # 将角度映射到 0~4095 之间
+        position = int((angle + 180) * (4095 / 360))
+        # 限制目标位置在有效范围内
+        return max(0, min(position, 4095))
+
+    def set_position(self, servo_id, position):
+        """
+        向舵机发送设置目标位置的指令
+        """
+        # 设置位置指令格式：
+        # 头部: 0xFF 0xFF
+        # ID号: servo_id
+        # 数据长度: 包含ID号、指令类型和参数
+        # 指令类型: 0x03（WRITE DATA）
+        # 参数: 目标位置（0x2A地址），位置值和执行时间
+        # 校验: 校验和
+        command = self.create_command(servo_id, 0x03, [0x2A, position & 0xFF, (position >> 8) & 0xFF, 0x00, 0x00])  # 执行时间设为0（最快速度）
+
+        # 发送指令
+        self.uart.write(command)
+        self.uart.flush()
+
+    def create_command(self, servo_id, instruction, params):
+        """
+        创建指令数据包
+        """
+        # 字头: 0xFF 0xFF
+        header = [0xFF, 0xFF]
+        # ID号
+        id_byte = [servo_id]
+        # 数据长度
+        data_len = [len(params) + 2]  # ID号 + 指令类型 + 参数字节数
+        # 指令类型
+        instruction_byte = [instruction]
+        # 参数
+        command = header + id_byte + data_len + instruction_byte + params
+        # 校验
+        checksum = self.calculate_checksum(command)
+        command.append(checksum)
+        return bytes(command)
+
+    def calculate_checksum(self, command):
+        """
+        计算校验和
+        """
+        checksum = (~sum(command)) & 0xFF
+        return checksum
+
+def main(args=None):
+    rclpy.init(args=args)
+
+    # 创建并运行 ROS2 节点
+    controller = GimbalController()
+
+    try:
+        rclpy.spin(controller)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        controller.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+
+
+
+您提供的Python脚本是一个ROS2节点，用于通过串口控制JOHO舵机

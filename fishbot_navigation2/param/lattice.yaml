@@ -1,0 +1,103 @@
+# 运动基元配置文件
+# 定义了全向轮机器人的各种可能运动方式
+
+# 基本参数
+resolution: 0.05  # 分辨率，与costmap相同
+time_resolution: 0.1  # 时间分辨率
+min_turning_radius: 0.0  # 最小转弯半径，全向轮为0
+cache_obstacle_heuristic: true  # 缓存障碍物启发式
+allow_reverse_expansion: true  # 允许反向扩展
+allow_primitive_interpolation: true  # 允许基元插值
+
+# 运动基元定义
+primitives:
+  # 直线运动
+  - name: "forward"
+    motion_model: "OMNI"
+    velocities: [0.26, 0.0, 0.0]  # [vx, vy, vtheta]
+    duration: 1.0
+
+  - name: "backward"
+    motion_model: "OMNI"
+    velocities: [-0.26, 0.0, 0.0]
+    duration: 1.0
+
+  - name: "left"
+    motion_model: "OMNI"
+    velocities: [0.0, 0.26, 0.0]
+    duration: 1.0
+
+  - name: "right"
+    motion_model: "OMNI"
+    velocities: [0.0, -0.26, 0.0]
+    duration: 1.0
+
+  # 对角线运动
+  - name: "forward_left"
+    motion_model: "OMNI"
+    velocities: [0.18, 0.18, 0.0]  # 对角线速度为直线速度的0.707倍
+    duration: 1.0
+
+  - name: "forward_right"
+    motion_model: "OMNI"
+    velocities: [0.18, -0.18, 0.0]
+    duration: 1.0
+
+  - name: "backward_left"
+    motion_model: "OMNI"
+    velocities: [-0.18, 0.18, 0.0]
+    duration: 1.0
+
+  - name: "backward_right"
+    motion_model: "OMNI"
+    velocities: [-0.18, -0.18, 0.0]
+    duration: 1.0
+
+  # 原地旋转
+  - name: "rotate_left"
+    motion_model: "OMNI"
+    velocities: [0.0, 0.0, 1.0]
+    duration: 1.0
+
+  - name: "rotate_right"
+    motion_model: "OMNI"
+    velocities: [0.0, 0.0, -1.0]
+    duration: 1.0
+
+  # 组合运动
+  - name: "forward_rotate_left"
+    motion_model: "OMNI"
+    velocities: [0.18, 0.0, 0.5]
+    duration: 1.0
+
+  - name: "forward_rotate_right"
+    motion_model: "OMNI"
+    velocities: [0.18, 0.0, -0.5]
+    duration: 1.0
+
+  - name: "backward_rotate_left"
+    motion_model: "OMNI"
+    velocities: [-0.18, 0.0, 0.5]
+    duration: 1.0
+
+  - name: "backward_rotate_right"
+    motion_model: "OMNI"
+    velocities: [-0.18, 0.0, -0.5]
+    duration: 1.0
+
+# 运动基元权重
+weights:
+  forward: 1.0
+  backward: 1.0
+  left: 1.0
+  right: 1.0
+  forward_left: 1.0
+  forward_right: 1.0
+  backward_left: 1.0
+  backward_right: 1.0
+  rotate_left: 1.0
+  rotate_right: 1.0
+  forward_rotate_left: 1.0
+  forward_rotate_right: 1.0
+  backward_rotate_left: 1.0
+  backward_rotate_right: 1.0 

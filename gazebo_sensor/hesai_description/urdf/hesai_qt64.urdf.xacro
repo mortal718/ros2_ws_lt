@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="hesai_qt64" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="hesai_qt64" params="parent:=base_link prefix:='' name:=pandar_qt64
+                                         topic_name:=/lidar_points
+                                         simulation:=true lidar_frame:=pandar use_gpu:=true">
+    
+
+    <link name="${prefix}hesai_base">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="file://$(find hesai_description)/meshes/visual/qt64.dae" />
+        </geometry>
+      </visual>
+      <inertial>
+        <!-- TODO Still correspond to values of XT32 -->
+        <origin xyz="-0.015e-3 0.0 37.494e-3" rpy="0 0 0" />
+        <mass value="0.807" />
+        <inertia ixx="886.81e-6" ixy="5.802e-11" ixz="-0.34e-6" iyy="898.12e-6" iyz="-0.014e-6" izz="1004.287e-6" />
+      </inertial>
+      <collision>
+        <origin xyz="0 0 38.0e-3"/>
+        <geometry>
+          <cylinder radius="51.500e-3" length="76.0e-3" />
+        </geometry>
+      </collision>
+    </link>
+    <link name="${lidar_frame}"/>
+    
+
+    <xacro:if value="${simulation}">
+      <xacro:include filename="$(find hesai_description)/urdf/gazebo.urdf.xacro"/>
+      <xacro:hesai_gazebo prefix="${prefix}" lidar_frame="${lidar_frame}" topic_name="${topic_name}" min_range="0.1" max_range="20.0" 
+        min_horizontal_angle="-180.0" max_horizontal_angle="180.0" min_vertical_angle="-52.1" max_vertical_angle="52.1"
+        hz="10" samples="600" lasers="64" collision_range="0.3" noise="0.008" use_gpu="${use_gpu}"
+      />
+    </xacro:if>
+  </xacro:macro>
+
+</robot>

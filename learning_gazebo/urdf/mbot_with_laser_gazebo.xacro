@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot name="mbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+   <!-- 添加base_footprint -->
+    <link name="base_footprint"/>
+
+    <!-- 添加base_footprint到base_link的连接 -->
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+
+    <xacro:include filename="$(find learning_gazebo)/urdf/human_bot_description4.urdf" />
+    <xacro:include filename="$(find learning_gazebo)/urdf/sensors/lidar_gazebo.xacro" />
+    <xacro:include filename="$(find learning_gazebo)/urdf/sensors/lidar_gazebo1.xacro" />
+    <xacro:include filename="$(find hesai_description)/urdf/hesai_qt64.urdf.xacro" />
+    <xacro:include filename="$(find hesai_description)/urdf/my_imu.urdf.xacro" />
+    <xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro"/>
+
+    <xacro:realsense_d435 sensor_name="d435" parent_link="base_link" rate="10">
+      <origin rpy="0.0 0.0 0.0 " xyz="0.1 0.0 0.83"/>
+    </xacro:realsense_d435>
+    
+    <xacro:property name="lidar_offset_x" value="0.23" />
+    <xacro:property name="lidar_offset_y" value="0.0" />
+    <xacro:property name="lidar_offset_z" value="0.15" />
+
+    <!-- lidar -->
+    <joint name="lidar_joint_1" type="fixed">
+        <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" rpy="0.0 0.0 0.0" />
+        <parent link="base_link"/>
+        <child link="laser1_link"/>
+    </joint>
+
+    <joint name="lidar_joint_2" type="fixed">
+        <origin xyz="-${lidar_offset_x + 0.09} ${lidar_offset_y} ${lidar_offset_z}" rpy="0.0 3.1416 0.0" />
+        <parent link="base_link"/>
+        <child link="laser2_link"/>
+    </joint>
+
+    <joint name="imu" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <parent link="pandar"/>
+        <child link="imu_link"/>
+    </joint>
+
+    <joint name="hesai_base_to_pandar" type="fixed">
+      <!-- See page 12 of QT64 user manual -->
+      <!-- Note that the X axis points left See manual page 11 -->
+      <origin xyz="0.0 0.0 50.4e-3" rpy="0.0 0.0 0.0"/>
+      <parent link="hesai_base"/>
+      <child link="pandar" />
+    </joint>
+
+    <joint name="base_link_to_hesai" type="fixed">
+      <origin xyz="-0.13 0.0 1.245" rpy="0.0 0.0 0.0"/>
+      <parent link="base_link" />
+      <child link="hesai_base" />
+    </joint>
+
+    <xacro:rplidar1 prefix="laser1"/>
+    <xacro:rplidar2 prefix="laser2"/>
+    <xacro:hesai_qt64 simulation="true"/>
+
+</robot>

@@ -1,0 +1,18 @@
+# Input topics handled/muxed.
+# For each topic:
+# - name    : name identifier to select the topic (*sub-namespace, see below)
+# - topic   : input topic of geometry_msgs::Twist type
+# - timeout : timeout in seconds to start discarding old messages, and use 0.0 speed instead
+# - priority: priority in the range [0, 255]; the higher the more priority over other topics
+
+twist_mux_2:
+  ros__parameters:
+    topics:
+      nav:
+        topic   : /cmd_vel_des
+        timeout : 1.0
+        priority: 10
+      avoidance:
+        topic   : /cmd_vel_mux/avoidance_controller
+        timeout : 1.0
+        priority: 20

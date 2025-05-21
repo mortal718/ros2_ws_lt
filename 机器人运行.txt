@@ -1,0 +1,63 @@
+#清理构建目录
+rm -rf ~/robot_ws/build/safety_limiter ~/robot_ws/install/safety_limiter
+
+colcon build --symlink-install
+source install/setup.bash 
+
+#表情
+colcon build --packages-select eye_expression_pkg --symlink-install
+source install/setup.bash 
+ros2 launch eye_expression_pkg eye_expression.launch.py 
+
+#键盘控制
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+
+#云台启动                                 
+	设置查看波特率：
+stty -F /dev/ttyUSB0 115200
+
+stty -F /dev/ttyUSB0 
+
+colcon build --packages-select uart_sdk --symlink-install
+source install/setup.bash
+ros2 run uart_sdk set_position 
+
+#底盘demo
+colcon build --symlink-install
+source install/setup.bash 
+ros2 launch xpkg_demo bringup_basic_ctrl.launch.py
+
+#手柄控制
+colcon build --packages-select safety_limiter --symlink-install
+source install/setup.bash 
+ros2 launch safety_limiter multi_node.launch.py 
+
+#gazebo启动
+colcon build --packages-select learning_gazebo --symlink-install
+source install/setup.bash 
+ros2 launch learning_gazebo load_mbot_laser_into_gazebo.launch.py
+
+#合并雷达
+colcon build --packages-select dual_laser_merger --symlink-install
+source install/setup.bash 
+ros2 launch dual_laser_merger demo_laser_merger.launch.py
+
+#cartographer建图并保存
+ros2 launch fishbot_cartographer cartographer.launch.py 
+ros2 run nav2_map_server map_saver_cli -t map -f fishbot_map
+
+#gmapping建图并保存
+colcon build --packages-select slam_gmapping --symlink-install
+source install/setup.bash 
+ros2 launch slam_gmapping slam_gmapping.launch.py
+ros2 run nav2_map_server map_saver_cli -t map -f fishbot_map
+
+
+#nav2启动
+colcon build --packages-up-to navigation2  --symlink-install
+source install/setup.bash 
+
+
+colcon build --packages-select fishbot_navigation2 --symlink-install
+source install/setup.bash 
+ros2 launch fishbot_navigation2 navigation2.launch.py

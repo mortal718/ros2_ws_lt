@@ -1,0 +1,74 @@
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="human_bot_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="3.14159 0 0" />
+      <mass
+        value="28.4577583093752" />
+      <inertia
+        ixx="0.246511268845295"
+        ixy="-0.00192312836057834"
+        ixz="0.00026583666936303"
+        iyy="0.330956876824415"
+        iyz="0.00624137337210093"
+        izz="0.37545095941197" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="3.14159 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/hri01/robot_des_ws/src/human_bot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="3.14159 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/hri01/robot_des_ws/src/human_bot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!-- 添加Gazebo插件 -->
+  <gazebo>
+    <static>false</static>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <!-- 添加全向移动插件 -->
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <publishTf>true</publishTf>
+    </plugin>
+  </gazebo>
+
+
+
+</robot>
