@@ -138,18 +138,21 @@ def generate_launch_description():
         ),
 
         Node(
-            package='topic_pkg',
-            executable='avoidance_controller',
+            package='topic_pkg',  
+            executable='avoidance_controller',  
             name='avoidance_controller',
             output='screen',
-            parameters=[{
-                'avoidance_speed': 0.5,
-                'activate_button': 6,
-                'r1_button': 5
-            }],
+            parameters=[
+                {'max_linear_vel': 0.0},  
+                {'max_side_vel': 0.4},  
+                {'max_angular_vel': 0.6},  
+                {'move_duration': 2.0},  
+                {'activate_button': 6},
+                {'r1_button': 5}
+            ],
             remappings=[
                 ('cmd_vel_out', '/cmd_vel_mux/avoidance_controller')
-            ]
+            ],
         ),
     
         

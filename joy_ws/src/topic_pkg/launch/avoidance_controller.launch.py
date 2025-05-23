@@ -23,7 +23,10 @@ def generate_launch_description():
             name='avoidance_controller',
             output='screen',
             parameters=[
-                {'avoidance_speed': 0.8},  
+                {'max_linear_vel': 0.3},  
+                {'max_side_vel': 0.4},  
+                {'max_angular_vel': 0.9},  
+                {'move_duration': 2.0},  
                 {'activate_button': 6},
                 {'r1_button': 5}
             ],

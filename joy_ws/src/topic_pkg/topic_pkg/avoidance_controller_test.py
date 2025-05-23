@@ -3,7 +3,6 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
-import math
 
 class AvoidanceController(Node):
     def __init__(self):
@@ -20,15 +19,8 @@ class AvoidanceController(Node):
             10)
         
         # 声明参数
-        self.declare_parameter('max_linear_vel', 0.3)  #
-        self.declare_parameter('max_side_vel', 0.4)  #
-        self.declare_parameter('max_angular_vel',0.9)  #  max:0.9
-        self.declare_parameter('move_duration', 2.0)  # 侧移持续时间(秒)
-        
-        self.max_linear_vel = self.get_parameter('max_linear_vel').value
-        self.max_side_vel = self.get_parameter('max_side_vel').value
-        self.max_angular_vel = self.get_parameter('max_angular_vel').value
-        self.move_duration = self.get_parameter('move_duration').value
+        self.declare_parameter('avoidance_speed', 0.5)
+        self.avoidance_speed = self.get_parameter('avoidance_speed').value
         
         # 按钮ID
         self.declare_parameter('activate_button', 6)
@@ -40,7 +32,6 @@ class AvoidanceController(Node):
         # 状态变量
         self.is_avoiding = False
         self.previous_r1_state = False
-        self.avoidance_start_time = None
         
         self.get_logger().info('Avoidance controller started, current state: Avoidance mode OFF')
     
@@ -60,25 +51,15 @@ class AvoidanceController(Node):
         if activate_pressed and current_r1_state and not self.previous_r1_state:
             self.is_avoiding = not self.is_avoiding
             if self.is_avoiding:
-                self.avoidance_start_time = self.get_clock().now()
-                self.get_logger().info('Entering avoidance mode - Side move + rotation')
+                self.get_logger().info('Entering avoidance mode')
             else:
                 self.get_logger().info('Exiting avoidance mode')
         
-        # 在避让模式中执行复合动作
+        # 只在避让模式中发送旋转指令
         if self.is_avoiding:
-            current_time = self.get_clock().now()
-            elapsed_time = (current_time - self.avoidance_start_time).nanoseconds / 1e9
-            
-            if elapsed_time < self.move_duration:
-                # 同时进行侧向移动和旋转
-                # 侧向移动速度(45度方向)
-                cmd_vel.linear.x = self.max_linear_vel 
-                cmd_vel.linear.y = -self.max_side_vel
-                cmd_vel.angular.z = self.max_angular_vel            
-                self.cmd_vel_pub.publish(cmd_vel)
-            else:
-                self.get_logger().info('avoidance mode finished')
+            cmd_vel.angular.z = self.avoidance_speed
+            self.cmd_vel_pub.publish(cmd_vel)
+        
         self.previous_r1_state = current_r1_state
 
 def main(args=None):
